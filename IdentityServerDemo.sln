@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerDemo.IS4Security", "src\IdentityServerDemo.IS4Security\IdentityServerDemo.IS4Security.csproj", "{E608550F-C54D-41FC-8132-A050E9D7C283}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerDemo.BlazorClient", "src\IdentityServerDemo.BlazorClient\IdentityServerDemo.BlazorClient.csproj", "{CFA3507C-01F2-43D5-AEB9-D6987E1B05C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerDemo.BlazorClient", "src\IdentityServerDemo.BlazorClient\IdentityServerDemo.BlazorClient.csproj", "{CFA3507C-01F2-43D5-AEB9-D6987E1B05C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerDemo.WebApi", "src\IdentityServerDemo.WebApi\IdentityServerDemo.WebApi.csproj", "{9B0F22BB-4817-468C-A599-FBBEBA280E25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CFA3507C-01F2-43D5-AEB9-D6987E1B05C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA3507C-01F2-43D5-AEB9-D6987E1B05C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA3507C-01F2-43D5-AEB9-D6987E1B05C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0F22BB-4817-468C-A599-FBBEBA280E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0F22BB-4817-468C-A599-FBBEBA280E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0F22BB-4817-468C-A599-FBBEBA280E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0F22BB-4817-468C-A599-FBBEBA280E25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

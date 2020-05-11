@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using IdentityServerDemo.BlazorClient.Helpers;
 
 namespace IdentityServerDemo.BlazorClient
 {
@@ -17,7 +18,7 @@ namespace IdentityServerDemo.BlazorClient
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44300") });
 
             builder.Services.AddOidcAuthentication(options =>
             {
@@ -25,6 +26,11 @@ namespace IdentityServerDemo.BlazorClient
                 // For more information, see https://aka.ms/blazor-standalone-auth
                 builder.Configuration.Bind("Local", options.ProviderOptions);
             });
+
+            builder.Services.AddOptions();
+            builder.Services.AddScoped<IHttpService, HttpService>();
+            builder.Services.AddTransient<CustomHttpClientFactory>();
+            //services.AddFileReaderService(options => options.InitializeOnFirstCall = true);            
 
             await builder.Build().RunAsync();
         }
