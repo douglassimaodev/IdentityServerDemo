@@ -18,6 +18,10 @@ namespace IdentityServerDemo.BlazorClient
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
+
+            //I know that there is a way to configure here so httpclient will add token in the request, but for me it didnt work
+            //Eu seu que tem uma forma de configurar aqui para o httpclient add o token de autenticacao nos request, mas nao funcionou para mim
+
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44300") });
 
             builder.Services.AddOidcAuthentication(options =>
