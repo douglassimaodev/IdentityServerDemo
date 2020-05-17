@@ -23,11 +23,12 @@ namespace IdentityServerDemo.BlazorClient
             //Eu seu que tem uma forma de configurar aqui para o httpclient add o token de autenticacao nos request, mas nao funcionou para mim
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44300") });
+            //https://localhost:44300 is my webapi 
 
             builder.Services.AddOidcAuthentication(options =>
             {
                 // Configure your authentication provider options here.
-                // For more information, see https://aka.ms/blazor-standalone-auth
+                // Values are in the wwwroot/appsettings.json
                 builder.Configuration.Bind("Local", options.ProviderOptions);
             });
 
