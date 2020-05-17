@@ -29,21 +29,21 @@ namespace IdentityServerDemo.BlazorClient.Helpers
             }
         }
 
-        public async Task<HttpResponseWrapper<T>> Get<T>(string url, bool includeToken = true)
-        {
-            var httpClient = await GetHttpClient(includeToken);
-            var responseHTTP = await httpClient.GetAsync(url);
+        //public async Task<HttpResponseWrapper<T>> Get<T>(string url, bool includeToken = true)
+        //{
+        //    var httpClient = await GetHttpClient(includeToken);
+        //    var responseHTTP = await httpClient.GetAsync(url);
 
-            if (responseHTTP.IsSuccessStatusCode)
-            {
-                var response = await Deserialize<T>(responseHTTP, defaultJsonSerializerOptions);
-                return new HttpResponseWrapper<T>(response, true, responseHTTP);
-            }
-            else
-            {
-                return new HttpResponseWrapper<T>(default, false, responseHTTP);
-            }
-        }
+        //    if (responseHTTP.IsSuccessStatusCode)
+        //    {
+        //        var response = await Deserialize<T>(responseHTTP, defaultJsonSerializerOptions);
+        //        return new HttpResponseWrapper<T>(response, true, responseHTTP);
+        //    }
+        //    else
+        //    {
+        //        return new HttpResponseWrapper<T>(default, false, responseHTTP);
+        //    }
+        //}
 
         public async Task<HttpResponseWrapper<T>> Get<T>(string url, bool includeToken = true)
         {
